@@ -1,8 +1,8 @@
 # install Prometheus Node Exporter with Authentication on Ubuntu
 
-1. Check for latest version here: https://github.com/prometheus/node_exporter/tags
+### 1. Check for latest version here: https://github.com/prometheus/node_exporter/tags
 
-2. Define your own username and password.
+### 2. Define your own username and password.
 ```
 password='YOURPASSWORD'
 username='admin'
@@ -10,7 +10,7 @@ node_exporter_url='https://github.com/prometheus/node_exporter/releases/download
 node_exporter_name='node_exporter-1.7.0.linux-amd64'
 ```
 
-3. Get and extract node_exporter.
+### 3. Get and extract node_exporter.
 ```
 mkdir /etc/node_exporter
 cd /etc/node_exporter
@@ -19,7 +19,7 @@ tar xvf ${node_exporter_name}.tar.gz
 sudo cp ${node_exporter_name}/node_exporter /usr/local/bin
 ```
 
-4. Add user and credential information
+### 4. Add user and credential information
 ```
 sudo useradd --no-create-home --shell /bin/false node_exporter
 
@@ -31,7 +31,7 @@ basic_auth_users:
 EOF
 ```
 
-5. Add node exporter to services and start it!
+### 5. Add node exporter to services and start it!
 ```
 sudo cat << EOF > /etc/systemd/system/node_exporter.service
 [Unit]
